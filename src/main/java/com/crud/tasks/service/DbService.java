@@ -17,6 +17,6 @@ public class DbService {
     }
 
     public Task findById(Long id) {
-        return repository.showById(id);
+        return repository.findById(id).orElseThrow(()->new IllegalArgumentException());
     }
 }
